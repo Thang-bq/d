@@ -1,40 +1,45 @@
-🚀 TaskFlow - Giải Pháp Quản Lý Công Việc
-https://img.shields.io/badge/ASP.NET_Core-8.0-purple https://img.shields.io/badge/Bootstrap-5.0-blue https://img.shields.io/badge/License-MIT-green https://img.shields.io/badge/Status-Active-brightgreen
+TaskFlow
+TaskFlow - Hệ thống Quản lý Công việc
+
+https://img.shields.io/badge/ASP.NET_Core-6.0-purple?style=flat-square
+https://img.shields.io/badge/Entity_Framework_Core-7.0-green?style=flat-square
+https://img.shields.io/badge/Bootstrap-5.0-blueviolet?style=flat-square
+https://img.shields.io/badge/License-MIT-yellow?style=flat-square
 
 📋 Giới thiệu
-TaskFlow là ứng dụng quản lý công việc hiện đại được xây dựng bằng ASP.NET Core MVC, giúp bạn tổ chức và quản lý công việc hàng ngày một cách hiệu quả.
+TaskFlow là ứng dụng web quản lý công việc cá nhân được xây dựng bằng ASP.NET Core MVC. Ứng dụng cho phép người dùng tạo, theo dõi và quản lý các công việc hàng ngày với đầy đủ tính năng CRUD, phân loại theo mức độ ưu tiên và trạng thái.
 
-✨ Tính năng chính
-✅ Quản lý công việc - Tạo, xem, sửa, xóa công việc
+✨ Tính năng
+✅ Quản lý công việc - Thêm, sửa, xóa và xem chi tiết công việc
 
-🎨 Hệ thống ưu tiên - 4 mức độ ưu tiên
+✅ Phân loại công việc - Theo độ ưu tiên (Cao, Trung bình, Thấp) và trạng thái (Chưa bắt đầu, Đang thực hiện, Hoàn thành)
 
-📊 Theo dõi trạng thái - Todo, Đang thực hiện, Hoàn thành
+✅ Xác thực người dùng - Đăng ký, đăng nhập và phân quyền truy cập
 
-📅 Theo dõi deadline - Thiết lập và nhắc nhở hạn hoàn thành
+✅ Giao diện responsive - Tương thích với nhiều thiết bị nhờ Bootstrap 5
 
-🔐 Xác thực người dùng - Bảo mật với ASP.NET Core Identity
+✅ API hỗ trợ - API controllers cho khả năng tương thích mobile
 
-📱 Thiết kế responsive - Hoạt động trên mọi thiết bị
+✅ Tìm kiếm & Lọc - Lọc công việc theo trạng thái và độ ưu tiên
 
-🛠️ Công nghệ sử dụng
-Backend: ASP.NET Core 8.0 MVC
+🛠 Công nghệ sử dụng
+Backend: ASP.NET Core 6.0, Entity Framework Core 7.0
 
-Frontend: Bootstrap 5, jQuery, Font Awesome
+Frontend: Bootstrap 5.3, jQuery, Razor Pages
 
-Database: SQL Server + Entity Framework Core
+Database: SQL Server (có thể dùng SQLite cho môi trường development)
 
 Authentication: ASP.NET Core Identity
 
-Deployment: Có thể deploy trên IIS, Docker, Azure
+Deployment: Azure App Service, Docker (tùy chọn)
 
-🚀 Cài đặt và chạy ứng dụng
+📦 Cài đặt và Chạy ứng dụng
 Yêu cầu hệ thống
-.NET 8.0 SDK
+.NET 6.0 SDK hoặc mới hơn
 
-SQL Server (LocalDB hoặc SQL Express)
+SQL Server 2012+ hoặc SQLite
 
-Visual Studio 2022 hoặc VS Code
+Visual Studio 2022+ hoặc VS Code
 
 Các bước cài đặt
 Clone repository
@@ -42,11 +47,11 @@ Clone repository
 bash
 git clone https://github.com/Thang-bq/TaskFlow.git
 cd TaskFlow
-Khôi phục packages
+Cài đặt dependencies
 
 bash
 dotnet restore
-Áp dụng migrations
+Thiết lập database
 
 bash
 dotnet ef database update
@@ -61,130 +66,64 @@ Mở trình duyệt và truy cập: https://localhost:7000
 text
 TaskFlow/
 ├── Controllers/
-│   └── TaskController.cs
+│   ├── TasksController.cs
+│   ├── HomeController.cs
+│   └── AccountController.cs
 ├── Models/
-│   └── Entities/
-│       ├── TaskItem.cs
-│       └── Category.cs
+│   ├── TaskItem.cs
+│   ├── PriorityLevel.cs
+│   └── StatusLevel.cs
 ├── Views/
+│   ├── Tasks/
 │   ├── Home/
-│   │   └── Index.cshtml
-│   └── Task/
-│       ├── Index.cshtml
-│       └── Create.cshtml
+│   └── Shared/
 ├── Data/
 │   └── ApplicationDbContext.cs
-├── wwwroot/
-│   └── css/
-│       └── site.css
-└── appsettings.json
-🎮 Hướng dẫn sử dụng
-Đăng ký tài khoản
-Truy cập trang đăng ký
+├── Migrations/
+└── wwwroot/
+🎮 Sử dụng ứng dụng
+Đăng ký tài khoản - Tạo tài khoản người dùng mới
 
-Điền thông tin email và mật khẩu
+Đăng nhập - Truy cập vào hệ thống
 
-Xác nhận email (nếu có cấu hình email)
+Tạo công việc - Thêm công việc mới với các thông tin chi tiết
 
-Tạo công việc mới
-Đăng nhập vào hệ thống
+Theo dõi tiến độ - Cập nhật trạng thái công việc
 
-Nhấn "Tạo công việc mới"
+Lọc và tìm kiếm - Sử dụng bộ lọc để quản lý công việc hiệu quả
 
-Điền thông tin:
+🌟 Điểm nổi bật
+Thiết kế theo mô hình MVC chuẩn
 
-Tiêu đề công việc
+Sử dụng Entity Framework Core ORM
 
-Mô tả chi tiết
+Xác thực người dùng với ASP.NET Core Identity
 
-Mức độ ưu tiên
+Giao diện thân thiện, responsive
 
-Deadline (nếu có)
+Code được tổ chức rõ ràng, dễ bảo trì
 
-Nhấn "Lưu"
+Triển khai được trên nhiều nền tảng cloud
 
-Quản lý công việc
-Xem tất cả: Trang dashboard hiển thị tất cả công việc
-
-Cập nhật trạng thái: Nhấn "Hoàn thành" để đánh dấu
-
-Xóa công việc: Xóa những công việc không cần thiết
-
-Lọc theo ưu tiên: Hiển thị theo màu sắc chỉ định
-
-🌟 Tính năng tương lai
-Quản lý danh mục công việc
-
-Gửi email nhắc nhở
-
-Báo cáo và thống kê
-
-API cho mobile app
-
-Tính năng teamwork
-
-Lịch biểu trực quan
-
-🐛 Xử lý lỗi thường gặp
-Lỗi database
-bash
-# Xóa migration cũ và tạo lại
-dotnet ef migrations remove
-dotnet ef migrations add InitialCreate
-dotnet ef database update
-Lỗi build
-bash
-# Dọn sạch solution
-dotnet clean
-dotnet restore
-dotnet build
-Lỗi runtime
-Kiểm tra connection string trong appsettings.json
-
-Đảm bảo SQL Server đang chạy
+📄 License
+Dự án được phân phối theo giấy phép MIT. Xem file LICENSE để biết thêm chi tiết.
 
 🤝 Đóng góp
-Chúng tôi hoan nghênh mọi đóng góp từ cộng đồng! Để đóng góp:
+Đóng góp và đề xuất tính năng mới luôn được chào đón! Vui lòng:
 
 Fork repository
 
-Tạo branch mới: git checkout -b feature/tinh-nang-moi
+Tạo branch cho tính năng mới (git checkout -b feature/AmazingFeature)
 
-Commit changes: git commit -m 'Thêm tính năng mới'
+Commit các thay đổi (git commit -m 'Add some AmazingFeature')
 
-Push lên branch: git push origin feature/tinh-nang-moi
+Push to branch (git push origin feature/AmazingFeature)
 
-Tạo Pull Request
+Mở một Pull Request
 
-📄 Giấy phép
-Dự án được phân phối dưới giấy phép MIT. Xem file LICENSE để biết thêm chi tiết.
+📞 Liên hệ
+Bùi Quang Thắng - QuangThang.Contact@gmail.com
 
-👨‍💻 Thông tin developer
-Tên: Bùi Quang Thắng
+Link dự án: https://github.com/Thang-bq/TaskFlow
 
-Email: QuangThang.Contact@gmail.com
-
-GitHub: Thang-bq
-
-Dự án: TaskFlow
-
-🙏 Ghi nhận
-Đội ngũ phát triển ASP.NET Core
-
-Bootstrap team cho framework frontend
-
-Font Awesome cho icons
-
-Tất cả contributors và users của TaskFlow
-
-<div align="center">
-⭐ Hãy star repository nếu bạn thấy hữu ích!
-
-https://img.shields.io/github/stars/Thang-bq/TaskFlow?style=social
-https://img.shields.io/github/forks/Thang-bq/TaskFlow?style=social
-
-Được xây dựng với ❤️ bằng ASP.NET Core
-
-</div>
-Để biết thêm thông tin, câu hỏi hoặc góp ý, vui lòng liên hệ QuangThang.Contact@gmail.com
-
+⭐️ Hãy đánh giá sao cho repository nếu bạn thấy dự án này hữu ích!
