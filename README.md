@@ -1,8 +1,5 @@
 🚀 TaskFlow - Giải Pháp Quản Lý Công Việc
-https://img.shields.io/badge/ASP.NET_Core-8.0-purple
-https://img.shields.io/badge/Bootstrap-5.0-blue
-https://img.shields.io/badge/License-MIT-green
-https://img.shields.io/badge/Status-Active-brightgreen
+https://img.shields.io/badge/ASP.NET_Core-8.0-purple https://img.shields.io/badge/Bootstrap-5.0-blue https://img.shields.io/badge/License-MIT-green https://img.shields.io/badge/Status-Active-brightgreen
 
 📋 Giới thiệu
 TaskFlow là ứng dụng quản lý công việc hiện đại được xây dựng bằng ASP.NET Core MVC, giúp bạn tổ chức và quản lý công việc hàng ngày một cách hiệu quả.
